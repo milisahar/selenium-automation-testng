@@ -48,7 +48,7 @@ public class BasePage {
 		}
 	}
 
-	// Write Text by using JAVA Generic
+	// Write Text by using JAVA Generic (Sendkeys)
 	public <T> void writeText(T elementAttr, String text) {
 		if (elementAttr.getClass().getName().contains("By")) {
 			driver.findElement((By) elementAttr).sendKeys(text);
@@ -57,7 +57,7 @@ public class BasePage {
 		}
 	}
 
-	// Read Text by using JAVA Generic
+	// Read Text by using JAVA Generic (getText)
 	public <T> String readText(T elementAttr) {
 		if (elementAttr.getClass().getName().contains("By")) {
 			return driver.findElement((By) elementAttr).getText();
