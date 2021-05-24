@@ -24,6 +24,7 @@ public class AddTodoTest extends Setup {
 		Assert.assertTrue(elementTodo.contains(prop.getProperty("todo1")));
 		boolean checkbox = todoPage.isCheckboxSelected(TodoPage.checkbox);
 		Assert.assertFalse(checkbox);
+		
 	}
 	
 }

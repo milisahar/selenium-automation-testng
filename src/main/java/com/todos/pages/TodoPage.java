@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +22,7 @@ public class TodoPage extends BasePage {
 	final static String INPUT_FIELD = "//input[@ng-model='newTodo']";
 	final static String ELEMENT_1 = "//label[@class='ng-binding']";
 	final static String CHECKBOX = "//input[@type='checkbox']";
+	final static String DESTROY = "//button[@class='destroy']";
 
 	/* @FindBy */
 	@FindBy(how = How.XPATH, using = INPUT_FIELD)
@@ -29,6 +31,8 @@ public class TodoPage extends BasePage {
 	public static WebElement element1;
 	@FindBy(how = How.XPATH, using = CHECKBOX)
 	public static WebElement checkbox;
+	@FindBy(how = How.XPATH, using = DESTROY)
+	public static WebElement destroy;
 
 	/* Methods */
 	public void submitTodo(String todo) {
@@ -50,5 +54,15 @@ public class TodoPage extends BasePage {
 	public Boolean isCheckboxSelected(WebElement element) {
 		Boolean isCheckboxSelected = element.isSelected();
 		return isCheckboxSelected;
+	}
+	public void destroyTodo(String todo) throws InterruptedException{
+		//click(checkbox);
+		//click(clear);
+		//Thread.sleep(3000);
+		Actions action = new Actions(driver);
+		action.moveToElement(destroy).perform();
+		click(destroy);
+		//todo = driver.getPageSource();
+		
 	}
 }

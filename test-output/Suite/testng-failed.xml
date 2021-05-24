@@ -9,9 +9,15 @@
         <methods>
           <include name="setupTest"/>
           <include name="cleanTest"/>
-          <include name="iCanAddTodo"/>
         </methods>
       </class> <!-- com.todos.tests.AddTodoTest -->
+      <class name="com.todos.tests.RemoveTodo">
+        <methods>
+          <include name="setupTest"/>
+          <include name="iCanDeleteTodo"/>
+          <include name="cleanTest"/>
+        </methods>
+      </class> <!-- com.todos.tests.RemoveTodo -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
